@@ -1,0 +1,21 @@
+table, tr, td, th {
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 4px;
+}
+
+th {
+    background-color: red;
+    border: 1px solid red;
+    color: yellow;
+}
+
+tr:nth-child(even) {
+    background: antiquewhite;
+}
+tr:nth-child(odd) {
+    background: orange;
+}
