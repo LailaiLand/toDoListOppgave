@@ -38,7 +38,7 @@ function updateView() {
     }
     table.innerHTML = html + /*html*/`
     <tr>
-        <td> <input type="text" id="addition" /></td>
+        <td> <input type="text" id="addition" onkeydown="if (event.code === 'Enter') addTask();"/></td>
         <td> <button onclick="addTask()">Legg til</button> </td>
     </tr>
     `;
@@ -63,7 +63,7 @@ function tableRow(i) {
     else {
         let people = comeTogether();
         row = /*html*/`<tr>
-            <td> <input type="text" id="taskInput${i}" value="${item.task}"> </td>
+            <td> <input type="text" id="taskInput${i}" value="${item.task}" onkeydown="if (event.code === 'Enter') saveChanges('${i}');"/> </td>
             <td>
                 <label for="selection${i}">Hvem skal gjøre det?</label>
                 <select name="selection${i}" id="selection${i}">
